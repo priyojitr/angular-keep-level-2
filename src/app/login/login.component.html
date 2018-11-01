@@ -3,7 +3,7 @@
     <mat-card-title>Login</mat-card-title>
     <div class="login-c-form">
         <br>
-        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+        <div *ngIf="submitMessage" class="error-message">{{ submitMessage }}</div>
         <br>
         <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
             <mat-form-field>

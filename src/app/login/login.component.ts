@@ -18,8 +18,8 @@ export class LoginComponent {
         password: new FormControl('', [Validators.required, Validators.minLength(4)])
       }
     );
-    public bearerToken: any;
-    public erroMessage: string;
+    public bearerToken: string;
+    public submitMessage: string;
 
     constructor(private _authService: AuthenticationService,
       private _routerService: RouterService) {
@@ -30,6 +30,16 @@ export class LoginComponent {
     }
     get userpassword() {
       return this.loginForm.get('password');
+    }
+    set username(un: any) {
+      this.loginForm.setValue({
+        username: un.value
+      });
+    }
+    set password(pwd: any) {
+      this.loginForm.setValue({
+        password: pwd.value
+      });
     }
     // set error messages for login form
     getUsernameBlankErrorMsg() {
@@ -50,7 +60,11 @@ export class LoginComponent {
           this._routerService.routeToDashboard();
         },
         err => {
-          this.erroMessage = err.error.message;
+          console.log(err);
+          if ( err.status !== 0 )
+            this.submitMessage = err.error.message;
+          else
+            this.submitMessage = err.statusText;
         }
       );
     }
