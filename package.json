@@ -32,6 +32,7 @@
     "object-assign": "^4.1.1",
     "promise": "^8.0.1",
     "rxjs": "^5.5.2",
+    "rxjs-compat": "^6.3.3",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
