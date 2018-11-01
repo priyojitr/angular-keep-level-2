@@ -7,13 +7,13 @@
         <br>
         <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
             <mat-form-field>
-                <input matInput type="text" id="username" placeholder="Username"
+                <input matInput type="text" id="username" placeholder="Username" name="username"
                     formControlName="username" class="username">
                 <mat-error>{{ getUsernameBlankErrorMsg() }}</mat-error>
             </mat-form-field>
             <br><br>
             <mat-form-field>
-                <input matInput type="text" id="password" placeholder="Password"
+                <input matInput type="password" id="password" placeholder="Password" name="password"
                     formControlName="password" class="password">
                 <mat-error>{{ getPasswordBlankErrorMsg() }}</mat-error>
                 <mat-error>{{ getPasswordLengthErrorMsg() }}</mat-error>

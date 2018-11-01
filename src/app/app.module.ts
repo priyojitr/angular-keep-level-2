@@ -30,7 +30,7 @@ import { CanActivateRouteGuard } from './can-activate-route.guard';
 // app routes
 const appRoute: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: 'dashboard', component: DashboardComponent, canActivate: [CanActivateRouteGuard] }
 ];
 

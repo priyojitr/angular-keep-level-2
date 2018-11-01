@@ -61,10 +61,11 @@ export class LoginComponent {
         },
         err => {
           console.log(err);
-          if ( err.status !== 0 )
+          if ( err.status !== 0 ) {
             this.submitMessage = err.error.message;
-          else
+          } else {
             this.submitMessage = err.statusText;
+          }
         }
       );
     }
